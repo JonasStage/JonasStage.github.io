@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonas Stage Sø – Freshwater Ecologist & Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ HEADER / HERO ═══════════════════ -->
+  <header class="hero">
+    <div class="hero-inner container">
+      <img
+        src="https://avatars.githubusercontent.com/u/57667863?v=4"
+        alt="Jonas Stage Sø"
+        class="avatar"
+      />
+      <div class="hero-text">
+        <h1>Jonas Stage Sø</h1>
+        <p class="subtitle">Freshwater Ecologist &nbsp;·&nbsp; Greenhouse Gas Researcher &nbsp;·&nbsp; Open-Source Developer</p>
+        <p class="affiliation">University of Copenhagen &amp; University of Southern Denmark</p>
+        <div class="hero-links">
+          <a href="https://github.com/JonasStage" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.838 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://scholar.google.com/citations?user=-6tGaCoAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            Google Scholar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav class="topnav">
+    <div class="container nav-inner">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#software">Software &amp; Tools</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a freshwater ecologist and environmental scientist with a focus on
+            <strong>greenhouse gas emissions</strong> from aquatic ecosystems — lakes, ponds, streams,
+            and wetlands. My research investigates how carbon dioxide (CO₂) and methane (CH₄)
+            are produced, transported, and emitted from freshwater environments, and how human
+            activities and climate change alter these fluxes.
+          </p>
+          <p>
+            I combine field-based measurements (including custom-built sensor systems), large-scale
+            data synthesis, and statistical modelling to understand freshwater carbon cycling. I am
+            also committed to reproducible, open science — sharing data, code, and tools openly
+            through GitHub.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">30+</span>
+            <span class="stat-label">Publications</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">11</span>
+            <span class="stat-label">GitHub Repositories</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">522</span>
+            <span class="stat-label">Lakes Studied Worldwide</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ RESEARCH ═══════════════════ -->
+    <section id="research" class="section">
+      <h2 class="section-title">Research Themes</h2>
+      <div class="theme-grid">
+        <div class="theme-card">
+          <div class="theme-icon">🌿</div>
+          <h3>Greenhouse Gas Fluxes</h3>
+          <p>
+            Measuring and modelling CH₄ and CO₂ emissions from lakes, ponds, streams, and wetlands,
+            with a focus on ebullition vs. diffusion pathways and temporal dynamics.
+          </p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-icon">🔬</div>
+          <h3>DIY Sensor Technology</h3>
+          <p>
+            Designing low-cost, open-source sensor systems for automatic measurement of methane and
+            CO₂ fluxes in aquatic environments, enabling high-resolution temporal monitoring.
+          </p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-icon">🏞️</div>
+          <h3>Lake Restoration &amp; Ecology</h3>
+          <p>
+            Investigating nutrient dynamics, phosphorus cycling, water quality, and biodiversity in
+            newly established and restored lakes, with long-term monitoring data from Danish lakes.
+          </p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-icon">🌍</div>
+          <h3>Global Synthesis</h3>
+          <p>
+            Contributing to global datasets and meta-analyses of freshwater carbon dynamics — including
+            a worldwide dataset of depth-resolved CO₂ and CH₄ concentrations across 522 water bodies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ PUBLICATIONS ═══════════════════ -->
+    <section id="publications" class="section">
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-sub">
+        Full list on
+        <a href="https://scholar.google.com/citations?user=-6tGaCoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+
+      <div class="pub-list">
+
+        <!-- 2026 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2026</h3>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Scientific Data</span>
+            </div>
+            <h4 class="pub-title">Depth-resolved carbon dioxide and methane concentrations in 522 lakes, ponds, and reservoirs worldwide</h4>
+            <p class="pub-authors">JS Rabaey, ASL Lewis, K Attermeyer, P Aurich, S Bansal, M Bartosiewicz, JS Sø <em>et al.</em></p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Hydrobiologia 853 (2)</span>
+            </div>
+            <h4 class="pub-title">Nutrient dynamics following 50 years of reduced loading in the large and shallow Lake Arresø</h4>
+            <p class="pub-authors">K Sand-Jensen, JS Sø, T Kragh</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Restoration Ecology</span>
+            </div>
+            <h4 class="pub-title">Successful stocking of wild European perch in a reestablished lake with lasting effect over 10 years</h4>
+            <p class="pub-authors">T Kragh, JS Sø, K Sand‐Jensen, E Polauke</p>
+          </article>
+        </div>
+
+        <!-- 2025 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2025</h3>
+
+          <article class="pub-card highlight">
+            <div class="pub-meta">
+              <span class="pub-journal">Biogeochemistry 168 (3)</span>
+              <span class="pub-badge">2 citations</span>
+            </div>
+            <h4 class="pub-title">Ebullition dominates high methane emissions globally across all lake sizes</h4>
+            <p class="pub-authors">JS Sø, KT Martinsen, T Kragh, K Sand-Jensen</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Biogeochemistry 168 (1)</span>
+            </div>
+            <h4 class="pub-title">Environmental drivers of seasonal and hourly fluxes of methane and carbon dioxide across a lowland stream network with mixed catchment</h4>
+            <p class="pub-authors">BW Olsen, T Kragh, JS Sø, E Polauke, K Sand-Jensen</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Biogeochemistry 168 (5)</span>
+              <span class="pub-badge">1 citation</span>
+            </div>
+            <h4 class="pub-title">The mobility and release dynamics of sediment phosphorus in a shallow hypereutrophic lake</h4>
+            <p class="pub-authors">E Polauke, T Kragh, JS Sø, AM Klamt, M Søndergaard, K Reitzel</p>
+          </article>
+        </div>
+
+        <!-- 2024 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2024</h3>
+
+          <article class="pub-card highlight">
+            <div class="pub-meta">
+              <span class="pub-journal">Biogeochemistry 167 (2)</span>
+              <span class="pub-badge">20 citations</span>
+            </div>
+            <h4 class="pub-title">Hourly methane and carbon dioxide fluxes from temperate ponds</h4>
+            <p class="pub-authors">JS Sø, KT Martinsen, T Kragh, K Sand-Jensen</p>
+          </article>
+
+          <article class="pub-card highlight">
+            <div class="pub-meta">
+              <span class="pub-journal">JGR: Biogeosciences 129 (6)</span>
+              <span class="pub-badge">6 citations</span>
+            </div>
+            <h4 class="pub-title">Self‐made equipment for automatic methane diffusion and ebullition measurements from aquatic environments</h4>
+            <p class="pub-authors">JS Sø, K Sand‐Jensen, T Kragh</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Earth's Future 12 (4)</span>
+              <span class="pub-badge">41 citations</span>
+            </div>
+            <h4 class="pub-title">Global lake health in the Anthropocene: Societal implications and treatment strategies</h4>
+            <p class="pub-authors">GA Weyhenmeyer, AV Chukwuka, O Anneville, J Brookes, CR Carvalho, …</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Journal of Environmental Management 356</span>
+              <span class="pub-badge">9 citations</span>
+            </div>
+            <h4 class="pub-title">Water quality in a shallow eutrophic lake is unaffected by extensive thinning of planktivorous and benthivorous fish species</h4>
+            <p class="pub-authors">E Polauke, JS Sø, H Carl, PR Møller, K Reitzel, K Sand-Jensen, T Kragh</p>
+          </article>
+        </div>
+
+        <!-- 2023 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2023</h3>
+
+          <article class="pub-card highlight">
+            <div class="pub-meta">
+              <span class="pub-journal">Science of the Total Environment 878</span>
+              <span class="pub-badge">29 citations</span>
+            </div>
+            <h4 class="pub-title">Methane and carbon dioxide fluxes at high spatiotemporal resolution from a small temperate lake</h4>
+            <p class="pub-authors">JS Sø, K Sand-Jensen, KT Martinsen, E Polauke, JE Kjær, K Reitzel, T Kragh</p>
+          </article>
+        </div>
+
+        <!-- 2022 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2022</h3>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Ecological Engineering 176</span>
+              <span class="pub-badge">7 citations</span>
+            </div>
+            <h4 class="pub-title">Environmental drivers and sources of stream oxygen consumption in an agricultural lake catchment</h4>
+            <p class="pub-authors">JS Sø, T Kragh, K Sand-Jensen, KT Martinsen</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Science of the Total Environment 806</span>
+              <span class="pub-badge">17 citations</span>
+            </div>
+            <h4 class="pub-title">Wind drives fast changes of light climate in a large, shallow re-established lake</h4>
+            <p class="pub-authors">KT Martinsen, T Kragh, K Sand-Jensen, M Madsen-Østerbye, JS Sø et al.</p>
+          </article>
+        </div>
+
+        <!-- 2021 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2021</h3>
+
+          <article class="pub-card highlight">
+            <div class="pub-meta">
+              <span class="pub-journal">Science of The Total Environment 765</span>
+              <span class="pub-badge">25 citations</span>
+            </div>
+            <h4 class="pub-title">Large pools and fluxes of carbon, calcium and phosphorus in dense charophyte stands in ponds</h4>
+            <p class="pub-authors">K Sand-Jensen, KT Martinsen, AL Jakobsen, JS Sø, M Madsen-Østerbye et al.</p>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Ecological Engineering 161</span>
+              <span class="pub-badge">8 citations</span>
+            </div>
+            <h4 class="pub-title">Optimal physical design in a new lake for reducing phosphorus pools</h4>
+            <p class="pub-authors">JS Sø, K Sand-Jensen, T Kragh</p>
+          </article>
+        </div>
+
+        <!-- 2020 -->
+        <div class="pub-year-group">
+          <h3 class="pub-year">2020</h3>
+
+          <article class="pub-card">
+            <div class="pub-meta">
+              <span class="pub-journal">Freshwater Biology 65 (3)</span>
+              <span class="pub-badge">13 citations</span>
+            </div>
+            <h4 class="pub-title">Temporal development of biodiversity of macrophytes in newly established lakes</h4>
+            <p class="pub-authors">J Stage Sø, K Sand‐Jensen, L Baastrup‐Spohr</p>
+          </article>
+        </div>
+
+      </div><!-- /.pub-list -->
+    </section>
+
+    <!-- ═══════════════════ SOFTWARE & TOOLS ═══════════════════ -->
+    <section id="software" class="section">
+      <h2 class="section-title">Software &amp; Open-Source Tools</h2>
+      <p class="section-sub">All code is freely available on <a href="https://github.com/JonasStage" target="_blank" rel="noopener">GitHub</a>.</p>
+
+      <div class="repo-grid">
+
+        <a href="https://github.com/JonasStage/FluxSeparator" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+            <span class="repo-stars">⭐ 6</span>
+          </div>
+          <h3 class="repo-name">FluxSeparator</h3>
+          <p class="repo-desc">Separation of ebullitive and diffusive greenhouse gas fluxes from floating-chamber time-series data.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/Methane-and-CO2-sensor" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-cpp">C++</span>
+            <span class="repo-stars">⭐ 3</span>
+          </div>
+          <h3 class="repo-name">Methane-and-CO₂-sensor</h3>
+          <p class="repo-desc">Firmware and schematics for DIY low-cost sensors measuring CH₄ and CO₂ in aquatic environments.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/Methane_insight" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">Methane Insights</h3>
+          <p class="repo-desc">Interactive R Shiny application for exploring and visualising methane flux data.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/DKWaterChemistry" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">DKWaterChemistry</h3>
+          <p class="repo-desc">Analysis and visualisation of water chemistry data from Danish lakes and streams.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/Methane_sensor_calculation" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">Methane Sensor Calculation</h3>
+          <p class="repo-desc">R scripts for calibrating and processing raw voltage output from DIY methane sensors into concentration values.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/lake_chemistry" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">lake_chemistry</h3>
+          <p class="repo-desc">Data processing and analysis workflows for lake water chemistry measurements.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/Pond_encroachment" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">Pond Encroachment</h3>
+          <p class="repo-desc">Analysis of vegetation encroachment dynamics in temperate ponds.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/PFAS-map" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">PFAS Map</h3>
+          <p class="repo-desc">Spatial visualisation of PFAS contamination data across Denmark.</p>
+        </a>
+
+        <a href="https://github.com/JonasStage/seasonal_pond_ghg" target="_blank" rel="noopener" class="repo-card">
+          <div class="repo-header">
+            <span class="repo-lang lang-r">R</span>
+          </div>
+          <h3 class="repo-name">Seasonal Pond GHG</h3>
+          <p class="repo-desc">Code and data accompanying the analysis of seasonal greenhouse gas dynamics in temperate ponds.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-icon">🐙</span>
+          <div>
+            <strong>GitHub</strong><br />
+            <a href="https://github.com/JonasStage" target="_blank" rel="noopener">github.com/JonasStage</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📖</span>
+          <div>
+            <strong>Google Scholar</strong><br />
+            <a href="https://scholar.google.com/citations?user=-6tGaCoAAAAJ&hl=en" target="_blank" rel="noopener">View profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jonas Stage Sø &nbsp;·&nbsp; Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
