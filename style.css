@@ -2,7 +2,14 @@
    Jonas Stage Sø – GitHub Pages stylesheet (v2)
    ═══════════════════════════════════════════════ */
 
-/* ── Background wave decoration ── */
+/* ── Background wave decoration ──
+   Each layer is a repeating SVG tile (2880×600px).
+   The wave fill occupies the top 160px of each 600px tile;
+   the remaining 440px is transparent — creating natural spacing.
+   Three layers offset by 0 / 200 / 400px repeat every 200px down
+   the full page. Animation scrolls background-position-x so no
+   GPU-compositing conflicts (works in Chrome AND Safari).
+ ── */
 .content-area {
   position: relative;
 }
@@ -11,59 +18,46 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .wave-layer {
   position: absolute;
-  left: 0;
-  width: 200vw;          /* twice the viewport — the path tiles at exactly 100vw */
-  will-change: transform;
-  /* Dissolve bottom edge so each wave flows into the next */
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-          mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-}
-.wave-layer svg {
-  display: block;
-  width: 100%;
-  height: auto;          /* scales proportionally from viewBox */
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 2880px 600px;   /* tile = 2 wave periods wide × 600px tall */
 }
 
-/* Stack layers so the fade of one overlaps the crest of the next */
-.wave-1 { top: 0;     opacity: 0.30; }
-.wave-2 { top: 15vw;  opacity: 0.24; }
-.wave-3 { top: 28vw;  opacity: 0.18; }
-
-/* Animate — translateX(-100vw) = exactly one tile width */
+/* Wave 1 — mid-blue, crests upward, 14 s rightward */
 .wave-1 {
-  -webkit-animation: waveR 14s linear infinite;
-          animation: waveR 14s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C266,80 454,20 720,20 C986,20 1174,80 1440,80 C1706,80 1894,20 2160,20 C2426,20 2614,80 2880,80 L2880,160 L0,160 Z' fill='%234da8da' fill-opacity='.32'/%3E%3C/svg%3E");
+  background-position: 0 0;
+  -webkit-animation: wR1 14s linear infinite;
+          animation: wR1 14s linear infinite;
 }
+/* Wave 2 — dark-blue, opposing trough, 20 s leftward, offset 200 px */
 .wave-2 {
-  -webkit-animation: waveL 20s linear infinite;
-          animation: waveL 20s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C266,80 454,140 720,140 C986,140 1174,80 1440,80 C1706,80 1894,140 2160,140 C2426,140 2614,80 2880,80 L2880,160 L0,160 Z' fill='%231a6b9a' fill-opacity='.25'/%3E%3C/svg%3E");
+  background-position: 0 200px;
+  -webkit-animation: wL2 20s linear infinite;
+          animation: wL2 20s linear infinite;
 }
+/* Wave 3 — mid-blue, high-frequency ripple, 10 s rightward, offset 400 px */
 .wave-3 {
-  -webkit-animation: waveR 10s linear infinite;
-          animation: waveR 10s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C133,80 227,30 360,30 C493,30 587,80 720,80 C853,80 947,130 1080,130 C1213,130 1307,80 1440,80 C1573,80 1667,30 1800,30 C1933,30 2027,80 2160,80 C2293,80 2387,130 2520,130 C2653,130 2747,80 2880,80 L2880,160 L0,160 Z' fill='%234da8da' fill-opacity='.20'/%3E%3C/svg%3E");
+  background-position: 0 400px;
+  -webkit-animation: wR3 10s linear infinite;
+          animation: wR3 10s linear infinite;
 }
 
-@-webkit-keyframes waveR {
-  from { -webkit-transform: translateX(0);      transform: translateX(0); }
-  to   { -webkit-transform: translateX(-100vw); transform: translateX(-100vw); }
-}
-@keyframes waveR {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100vw); }
-}
-@-webkit-keyframes waveL {
-  from { -webkit-transform: translateX(-100vw); transform: translateX(-100vw); }
-  to   { -webkit-transform: translateX(0);      transform: translateX(0); }
-}
-@keyframes waveL {
-  from { transform: translateX(-100vw); }
-  to   { transform: translateX(0); }
-}
+/* Each keyframe keeps y-offset fixed while scrolling x by one tile period (1440 px) */
+@-webkit-keyframes wR1 { from { background-position: 0 0; }       to { background-position: -1440px 0; } }
+@keyframes         wR1 { from { background-position: 0 0; }       to { background-position: -1440px 0; } }
+
+@-webkit-keyframes wL2 { from { background-position: 0 200px; }   to { background-position:  1440px 200px; } }
+@keyframes         wL2 { from { background-position: 0 200px; }   to { background-position:  1440px 200px; } }
+
+@-webkit-keyframes wR3 { from { background-position: 0 400px; }   to { background-position: -1440px 400px; } }
+@keyframes         wR3 { from { background-position: 0 400px; }   to { background-position: -1440px 400px; } }
 
 /* Sections and footer sit above the wave */
 .content-area > main,
