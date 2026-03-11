@@ -37,6 +37,11 @@
     </div>
   </header>
 
+  <!-- Wave divider -->
+  <svg class="hero-wave" viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,38 C240,60 480,10 720,36 C960,62 1200,14 1440,28 L1440,56 L0,56 Z" fill="#ffffff"/>
+  </svg>
+
   <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
   <nav class="topnav">
     <div class="container nav-inner">
@@ -426,6 +431,45 @@
       <p>© 2026 Jonas Stage Sø &nbsp;·&nbsp; Built with GitHub Pages</p>
     </div>
   </footer>
+
+  <script>
+    // ── Nav scroll-spy ──
+    const sections  = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-inner a');
+    const spyObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting)
+          navLinks.forEach(a =>
+            a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-30% 0px -65% 0px' });
+    sections.forEach(s => spyObs.observe(s));
+
+    // ── Scroll-reveal ──
+    const revealEls = [
+      '.about-grid', '.stat-card',
+      '.theme-card', '.pub-year-group',
+      '.repo-card',  '.contact-item'
+    ];
+    document.querySelectorAll(revealEls.join(',')).forEach(el => el.classList.add('reveal'));
+
+    // Stagger siblings inside grids
+    document.querySelectorAll('.theme-grid, .repo-grid, .about-stats').forEach(grid => {
+      [...grid.children].forEach((child, i) => {
+        child.style.transitionDelay = (i * 0.07) + 's';
+      });
+    });
+
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  </script>
 
 </body>
 </html>
