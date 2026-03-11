@@ -152,7 +152,7 @@ a:hover { text-decoration: underline; }
   flex-shrink: 0;
 }
 
-/* Wave divider at bottom of hero */
+/* Wave divider */
 .hero-wave {
   position: absolute;
   bottom: -1px;
@@ -160,6 +160,17 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: 56px;
   pointer-events: none;
+  animation: waveFloat 6s ease-in-out infinite;
+}
+.hero-wave-behind {
+  height: 46px;
+  bottom: 0;
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+@keyframes waveFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
 }
 
 /* ── Sticky nav ── */
@@ -209,14 +220,24 @@ a:hover { text-decoration: underline; }
   color: var(--water-dark);
   margin-bottom: 12px;
   padding-bottom: 14px;
+  padding-left: 18px;
   position: relative;
 }
-/* Animated gradient underline on section titles */
+/* Vertical water-bar accent */
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.12em;
+  width: 5px; height: 0.82em;
+  background: linear-gradient(180deg, var(--water-light), var(--water-mid));
+  border-radius: 3px;
+}
+/* Horizontal gradient underline */
 .section-title::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0;
-  width: 60px; height: 3px;
+  width: 64px; height: 3px;
   background: linear-gradient(90deg, var(--water-mid), var(--water-light));
   border-radius: 2px;
 }
