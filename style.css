@@ -3,16 +3,25 @@
    ═══════════════════════════════════════════════ */
 
 /* ── Background wave decoration ── */
+.content-area {
+  position: relative;
+}
 .bg-wave {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   overflow: hidden;
 }
 .bg-wave svg {
   width: 100%;
   height: 100%;
+}
+/* Sections and footer sit above the wave */
+.content-area > main,
+.content-area > footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Reset & base ── */
