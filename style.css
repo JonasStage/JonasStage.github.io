@@ -17,26 +17,51 @@
 .wave-layer {
   position: absolute;
   left: 0;
-  width: 200%;   /* twice viewport so the looping pattern is seamless */
-  height: 360px;
+  width: 200vw;          /* twice the viewport — the path tiles at exactly 100vw */
+  will-change: transform;
+  /* Dissolve bottom edge so each wave flows into the next */
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 .wave-layer svg {
-  width: 100%;
-  height: 100%;
   display: block;
+  width: 100%;
+  height: auto;          /* scales proportionally from viewBox */
 }
 
-/* Position each layer at a different depth in the content area */
-.wave-1 { top: 0;   animation: waveRight 14s linear infinite; }
-.wave-2 { top: 32%; animation: waveLeft  20s linear infinite; }
-.wave-3 { top: 62%; animation: waveRight 10s linear infinite; }
+/* Stack layers so the fade of one overlaps the crest of the next */
+.wave-1 { top: 0;     opacity: 0.30; }
+.wave-2 { top: 15vw;  opacity: 0.24; }
+.wave-3 { top: 28vw;  opacity: 0.18; }
 
-@keyframes waveRight {
+/* Animate — translateX(-100vw) = exactly one tile width */
+.wave-1 {
+  -webkit-animation: waveR 14s linear infinite;
+          animation: waveR 14s linear infinite;
+}
+.wave-2 {
+  -webkit-animation: waveL 20s linear infinite;
+          animation: waveL 20s linear infinite;
+}
+.wave-3 {
+  -webkit-animation: waveR 10s linear infinite;
+          animation: waveR 10s linear infinite;
+}
+
+@-webkit-keyframes waveR {
+  from { -webkit-transform: translateX(0);      transform: translateX(0); }
+  to   { -webkit-transform: translateX(-100vw); transform: translateX(-100vw); }
+}
+@keyframes waveR {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-100vw); }
 }
-@keyframes waveLeft {
-  from { transform: translateX(-50%); }
+@-webkit-keyframes waveL {
+  from { -webkit-transform: translateX(-100vw); transform: translateX(-100vw); }
+  to   { -webkit-transform: translateX(0);      transform: translateX(0); }
+}
+@keyframes waveL {
+  from { transform: translateX(-100vw); }
   to   { transform: translateX(0); }
 }
 
