@@ -29,21 +29,21 @@
 
 /* Wave 1 — mid-blue, crests upward, 14 s rightward */
 .wave-1 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C266,80 454,20 720,20 C986,20 1174,80 1440,80 C1706,80 1894,20 2160,20 C2426,20 2614,80 2880,80 L2880,160 L0,160 Z' fill='%234da8da' fill-opacity='.32'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMjY2LDgwIDQ1NCwyMCA3MjAsMjAgQzk4NiwyMCAxMTc0LDgwIDE0NDAsODAgQzE3MDYsODAgMTg5NCwyMCAyMTYwLDIwIEMyNDI2LDIwIDI2MTQsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyM0ZGE4ZGEnIGZpbGwtb3BhY2l0eT0nMC4zMicvPjwvc3ZnPg==");
   background-position: 0 0;
   -webkit-animation: wR1 14s linear infinite;
           animation: wR1 14s linear infinite;
 }
 /* Wave 2 — dark-blue, opposing trough, 20 s leftward, offset 200 px */
 .wave-2 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C266,80 454,140 720,140 C986,140 1174,80 1440,80 C1706,80 1894,140 2160,140 C2426,140 2614,80 2880,80 L2880,160 L0,160 Z' fill='%231a6b9a' fill-opacity='.25'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMjY2LDgwIDQ1NCwxNDAgNzIwLDE0MCBDOTg2LDE0MCAxMTc0LDgwIDE0NDAsODAgQzE3MDYsODAgMTg5NCwxNDAgMjE2MCwxNDAgQzI0MjYsMTQwIDI2MTQsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyMxYTZiOWEnIGZpbGwtb3BhY2l0eT0nMC4yNScvPjwvc3ZnPg==");
   background-position: 0 200px;
   -webkit-animation: wL2 20s linear infinite;
           animation: wL2 20s linear infinite;
 }
 /* Wave 3 — mid-blue, high-frequency ripple, 10 s rightward, offset 400 px */
 .wave-3 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2880' height='600' viewBox='0 0 2880 600'%3E%3Cpath d='M0,80 C133,80 227,30 360,30 C493,30 587,80 720,80 C853,80 947,130 1080,130 C1213,130 1307,80 1440,80 C1573,80 1667,30 1800,30 C1933,30 2027,80 2160,80 C2293,80 2387,130 2520,130 C2653,130 2747,80 2880,80 L2880,160 L0,160 Z' fill='%234da8da' fill-opacity='.20'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMTMzLDgwIDIyNywzMCAzNjAsMzAgQzQ5MywzMCA1ODcsODAgNzIwLDgwIEM4NTMsODAgOTQ3LDEzMCAxMDgwLDEzMCBDMTIxMywxMzAgMTMwNyw4MCAxNDQwLDgwIEMxNTczLDgwIDE2NjcsMzAgMTgwMCwzMCBDMTkzMywzMCAyMDI3LDgwIDIxNjAsODAgQzIyOTMsODAgMjM4NywxMzAgMjUyMCwxMzAgQzI2NTMsMTMwIDI3NDcsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyM0ZGE4ZGEnIGZpbGwtb3BhY2l0eT0nMC4yMCcvPjwvc3ZnPg==");
   background-position: 0 400px;
   -webkit-animation: wR3 10s linear infinite;
           animation: wR3 10s linear infinite;
