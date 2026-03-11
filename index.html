@@ -64,11 +64,24 @@
 
     <!-- Decorative background waves (behind content, below hero) -->
     <div class="bg-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,280 C360,380 720,180 1080,280 C1260,330 1380,230 1440,260 L1440,900 L0,900 Z" fill="#4da8da" fill-opacity="0.10"/>
-        <path d="M0,500 C300,440 660,570 1020,500 C1200,462 1340,530 1440,508 L1440,900 L0,900 Z" fill="#1a6b9a" fill-opacity="0.07"/>
-        <path d="M0,710 C400,655 820,770 1200,705 C1340,678 1410,725 1440,714 L1440,900 L0,900 Z" fill="#4da8da" fill-opacity="0.05"/>
-      </svg>
+      <!-- Wave 1: slow, prominent, slides right -->
+      <div class="wave-layer wave-1">
+        <svg viewBox="0 0 2880 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,180 C180,240 360,120 540,180 C720,240 900,120 1080,180 C1260,240 1440,120 1620,180 C1800,240 1980,120 2160,180 C2340,240 2520,120 2700,180 C2790,210 2840,162 2880,180 L2880,360 L0,360 Z" fill="#4da8da" fill-opacity="0.20"/>
+        </svg>
+      </div>
+      <!-- Wave 2: medium, slides left -->
+      <div class="wave-layer wave-2">
+        <svg viewBox="0 0 2880 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,210 C360,140 720,280 1080,210 C1440,140 1800,280 2160,210 C2520,140 2880,280 2880,210 L2880,360 L0,360 Z" fill="#1a6b9a" fill-opacity="0.13"/>
+        </svg>
+      </div>
+      <!-- Wave 3: fast, ripply, slides right -->
+      <div class="wave-layer wave-3">
+        <svg viewBox="0 0 2880 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,270 C120,238 240,302 360,270 C480,238 600,302 720,270 C840,238 960,302 1080,270 C1200,238 1320,302 1440,270 C1560,238 1680,302 1800,270 C1920,238 2040,302 2160,270 C2280,238 2400,302 2520,270 C2640,238 2760,302 2880,270 L2880,360 L0,360 Z" fill="#4da8da" fill-opacity="0.10"/>
+        </svg>
+      </div>
     </div>
 
   <main class="container">
