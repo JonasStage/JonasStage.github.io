@@ -2,6 +2,19 @@
    Jonas Stage Sø – GitHub Pages stylesheet (v2)
    ═══════════════════════════════════════════════ */
 
+/* ── Background wave decoration ── */
+.bg-wave {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bg-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
 /* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -16,7 +29,7 @@
   --muted:        #5a6070;
   --border:       #dee4ea;
   --white:        #ffffff;
-  --card-bg:      #fafbfc;
+  --card-bg:      #ffffff;
   --radius:       12px;
   --shadow:       0 2px 14px rgba(0,0,0,.08);
   --shadow-hover: 0 8px 32px rgba(0,0,0,.14);
