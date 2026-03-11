@@ -3,12 +3,14 @@
    ═══════════════════════════════════════════════ */
 
 /* ── Background wave decoration ──
-   Each layer is a repeating SVG tile (2880×600px).
-   The wave fill occupies the top 160px of each 600px tile;
-   the remaining 440px is transparent — creating natural spacing.
-   Three layers offset by 0 / 200 / 400px repeat every 200px down
-   the full page. Animation scrolls background-position-x so no
-   GPU-compositing conflicts (works in Chrome AND Safari).
+   Three layers, each spanning the full content-area height.
+   Each SVG (viewBox 0 0 2880 600) has its wave crest at a different
+   proportional height and fills solid colour from the crest to y=600.
+   With background-size: 2880px 100% the SVG scales to the full page
+   height, so the three crests appear at ~13 / 48 / 78 % of the page.
+   background-repeat: repeat-x tiles only horizontally for animation.
+   Animating background-position-x avoids GPU-compositing issues in
+   both Chrome and Safari.
  ── */
 .content-area {
   position: relative;
@@ -23,41 +25,38 @@
 .wave-layer {
   position: absolute;
   inset: 0;
-  background-repeat: repeat;
-  background-size: 2880px 600px;   /* tile = 2 wave periods wide × 600px tall */
+  background-repeat: repeat-x;          /* tile horizontally only */
+  background-size: 2880px 100%;         /* each tile = 2880 px wide × full page height */
 }
 
-/* Wave 1 — mid-blue, crests upward, 14 s rightward */
+/* Wave 1 — crest at ~13% of page, fill to bottom, slow rightward */
 .wave-1 {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMjY2LDgwIDQ1NCwyMCA3MjAsMjAgQzk4NiwyMCAxMTc0LDgwIDE0NDAsODAgQzE3MDYsODAgMTg5NCwyMCAyMTYwLDIwIEMyNDI2LDIwIDI2MTQsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyM0ZGE4ZGEnIGZpbGwtb3BhY2l0eT0nMC4zMicvPjwvc3ZnPg==");
-  background-position: 0 0;
-  -webkit-animation: wR1 14s linear infinite;
-          animation: wR1 14s linear infinite;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMjY2LDgwIDQ1NCwyMCA3MjAsMjAgQzk4NiwyMCAxMTc0LDgwIDE0NDAsODAgQzE3MDYsODAgMTg5NCwyMCAyMTYwLDIwIEMyNDI2LDIwIDI2MTQsODAgMjg4MCw4MCBMMjg4MCw2MDAgTDAsNjAwIFonIGZpbGw9JyM0ZGE4ZGEnIGZpbGwtb3BhY2l0eT0nMC4xOCcvPjwvc3ZnPg==");
+  -webkit-animation: wR1 18s linear infinite;
+          animation: wR1 18s linear infinite;
 }
-/* Wave 2 — dark-blue, opposing trough, 20 s leftward, offset 200 px */
+/* Wave 2 — crest at ~48% of page, opposing curve, leftward */
 .wave-2 {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMjY2LDgwIDQ1NCwxNDAgNzIwLDE0MCBDOTg2LDE0MCAxMTc0LDgwIDE0NDAsODAgQzE3MDYsODAgMTg5NCwxNDAgMjE2MCwxNDAgQzI0MjYsMTQwIDI2MTQsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyMxYTZiOWEnIGZpbGwtb3BhY2l0eT0nMC4yNScvPjwvc3ZnPg==");
-  background-position: 0 200px;
-  -webkit-animation: wL2 20s linear infinite;
-          animation: wL2 20s linear infinite;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCwyOTAgQzI2NiwyOTAgNDU0LDIzMCA3MjAsMjMwIEM5ODYsMjMwIDExNzQsMjkwIDE0NDAsMjkwIEMxNzA2LDI5MCAxODk0LDIzMCAyMTYwLDIzMCBDMjQyNiwyMzAgMjYxNCwyOTAgMjg4MCwyOTAgTDI4ODAsNjAwIEwwLDYwMCBaJyBmaWxsPScjMWE2YjlhJyBmaWxsLW9wYWNpdHk9JzAuMjAnLz48L3N2Zz4=");
+  -webkit-animation: wL2 14s linear infinite;
+          animation: wL2 14s linear infinite;
 }
-/* Wave 3 — mid-blue, high-frequency ripple, 10 s rightward, offset 400 px */
+/* Wave 3 — crest at ~78% of page, high-frequency ripple, rightward */
 .wave-3 {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw4MCBDMTMzLDgwIDIyNywzMCAzNjAsMzAgQzQ5MywzMCA1ODcsODAgNzIwLDgwIEM4NTMsODAgOTQ3LDEzMCAxMDgwLDEzMCBDMTIxMywxMzAgMTMwNyw4MCAxNDQwLDgwIEMxNTczLDgwIDE2NjcsMzAgMTgwMCwzMCBDMTkzMywzMCAyMDI3LDgwIDIxNjAsODAgQzIyOTMsODAgMjM4NywxMzAgMjUyMCwxMzAgQzI2NTMsMTMwIDI3NDcsODAgMjg4MCw4MCBMMjg4MCwxNjAgTDAsMTYwIFonIGZpbGw9JyM0ZGE4ZGEnIGZpbGwtb3BhY2l0eT0nMC4yMCcvPjwvc3ZnPg==");
-  background-position: 0 400px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyODgwJyBoZWlnaHQ9JzYwMCcgdmlld0JveD0nMCAwIDI4ODAgNjAwJz48cGF0aCBkPSdNMCw0NzAgQzEzMyw0NzAgMjI3LDQxMCAzNjAsNDEwIEM0OTMsNDEwIDU4Nyw0NzAgNzIwLDQ3MCBDODUzLDQ3MCA5NDcsNTMwIDEwODAsNTMwIEMxMjEzLDUzMCAxMzA3LDQ3MCAxNDQwLDQ3MCBDMTU3Myw0NzAgMTY2Nyw0MTAgMTgwMCw0MTAgQzE5MzMsNDEwIDIwMjcsNDcwIDIxNjAsNDcwIEMyMjkzLDQ3MCAyMzg3LDUzMCAyNTIwLDUzMCBDMjY1Myw1MzAgMjc0Nyw0NzAgMjg4MCw0NzAgTDI4ODAsNjAwIEwwLDYwMCBaJyBmaWxsPScjNGRhOGRhJyBmaWxsLW9wYWNpdHk9JzAuMjInLz48L3N2Zz4=");
   -webkit-animation: wR3 10s linear infinite;
           animation: wR3 10s linear infinite;
 }
 
-/* Each keyframe keeps y-offset fixed while scrolling x by one tile period (1440 px) */
-@-webkit-keyframes wR1 { from { background-position: 0 0; }       to { background-position: -1440px 0; } }
-@keyframes         wR1 { from { background-position: 0 0; }       to { background-position: -1440px 0; } }
+/* Animate background-position-x only (y stays at 0 = top of div) */
+@-webkit-keyframes wR1 { from { background-position: 0 0; } to { background-position: -1440px 0; } }
+@keyframes         wR1 { from { background-position: 0 0; } to { background-position: -1440px 0; } }
 
-@-webkit-keyframes wL2 { from { background-position: 0 200px; }   to { background-position:  1440px 200px; } }
-@keyframes         wL2 { from { background-position: 0 200px; }   to { background-position:  1440px 200px; } }
+@-webkit-keyframes wL2 { from { background-position: 0 0; } to { background-position:  1440px 0; } }
+@keyframes         wL2 { from { background-position: 0 0; } to { background-position:  1440px 0; } }
 
-@-webkit-keyframes wR3 { from { background-position: 0 400px; }   to { background-position: -1440px 400px; } }
-@keyframes         wR3 { from { background-position: 0 400px; }   to { background-position: -1440px 400px; } }
+@-webkit-keyframes wR3 { from { background-position: 0 0; } to { background-position: -1440px 0; } }
+@keyframes         wR3 { from { background-position: 0 0; } to { background-position: -1440px 0; } }
 
 /* Sections and footer sit above the wave */
 .content-area > main,
