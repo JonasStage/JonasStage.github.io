@@ -27,9 +27,9 @@ jobs:
           GITHUB_USER: JonasStage
           # Optional but recommended: makes Google Scholar reliable (see notes)
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-          SCHOLAR_ID: "-6tGaCoAAAAJ"
+          SCHOLAR_ID: "IP8yMtkAAAAJ"
           # Recommended: look up your ID on openalex.org (e.g. A5012345678) and paste it here.
-          OPENALEX_AUTHOR_ID: ""
+          OPENALEX_AUTHOR_ID: "A5041854845"
         run: python scripts/update_data.py
 
       - name: Commit if changed
