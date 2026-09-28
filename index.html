@@ -118,15 +118,15 @@
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <span class="stat-num">30+</span>
+            <span class="stat-num" id="stat-pubs">30+</span>
             <span class="stat-label">Publications</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">6</span>
+            <span class="stat-num" id="stat-repos">6</span>
             <span class="stat-label">GitHub Repositories</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">180+</span>
+            <span class="stat-num" id="stat-cites">180+</span>
             <span class="stat-label">Total Citations</span>
           </div>
         </div>
@@ -367,7 +367,7 @@
 
       <div class="repo-grid">
 
-        <a href="https://github.com/JonasStage/FluxSeparator" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/FluxSeparator" data-repo="FluxSeparator" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-r">R</span>
             <span class="repo-stars">⭐ 6</span>
@@ -376,7 +376,7 @@
           <p class="repo-desc">Separation of ebullitive and diffusive greenhouse gas fluxes from floating-chamber time-series data.</p>
         </a>
 
-        <a href="https://github.com/JonasStage/Methane-and-CO2-sensor" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/Methane-and-CO2-sensor" data-repo="Methane-and-CO2-sensor" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-cpp">C++</span>
             <span class="repo-stars">⭐ 3</span>
@@ -385,7 +385,7 @@
           <p class="repo-desc">Firmware and schematics for DIY low-cost sensors measuring CH₄ and CO₂ in aquatic environments.</p>
         </a>
 
-        <a href="https://github.com/JonasStage/DKWaterChemistry" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/DKWaterChemistry" data-repo="DKWaterChemistry" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-r">R</span>
           </div>
@@ -393,7 +393,7 @@
           <p class="repo-desc">Analysis and visualisation of water chemistry data from Danish lakes and streams.</p>
         </a>
 
-        <a href="https://github.com/JonasStage/lake_chemistry" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/lake_chemistry" data-repo="lake_chemistry" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-r">R</span>
           </div>
@@ -401,7 +401,7 @@
           <p class="repo-desc">Data processing and analysis workflows for lake water chemistry measurements.</p>
         </a>
 
-        <a href="https://github.com/JonasStage/Pond_encroachment" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/Pond_encroachment" data-repo="Pond_encroachment" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-r">R</span>
           </div>
@@ -409,7 +409,7 @@
           <p class="repo-desc">Analysis of vegetation encroachment dynamics in temperate ponds.</p>
         </a>
 
-        <a href="https://github.com/JonasStage/seasonal_pond_ghg" target="_blank" rel="noopener" class="repo-card">
+        <a href="https://github.com/JonasStage/seasonal_pond_ghg" data-repo="seasonal_pond_ghg" target="_blank" rel="noopener" class="repo-card">
           <div class="repo-header">
             <span class="repo-lang lang-r">R</span>
           </div>
@@ -453,7 +453,7 @@
   <!-- ═══════════════════ FOOTER ═══════════════════ -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Jonas Stage Sø &nbsp;·&nbsp; Built with GitHub Pages</p>
+      <p>© 2026 Jonas Stage Sø &nbsp;·&nbsp; Built with GitHub Pages<span id="last-updated"></span></p>
     </div>
   </footer>
 
@@ -496,6 +496,97 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  </script>
+
+  <script>
+    // ── Auto-updated stats (data.json is refreshed weekly by a GitHub Action) ──
+    // Anything not found in data.json simply keeps the static value written in the HTML.
+    (async function () {
+      const MIN_YEAR = 2020;   // new papers from this year onwards are added to the list automatically
+      let data;
+      try {
+        const r = await fetch('data.json', { cache: 'no-cache' });
+        if (!r.ok) return;
+        data = await r.json();
+      } catch (e) { return; }
+
+      const esc  = t => String(t ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+      const norm = t => String(t ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      const cite = n => n + (n === 1 ? ' citation' : ' citations');
+
+      // Headline numbers
+      const st = data.stats || {};
+      const setStat = (id, v) => { if (Number.isFinite(v) && v > 0) document.getElementById(id).textContent = v; };
+      setStat('stat-pubs',  st.publications);
+      setStat('stat-repos', st.repositories);
+      setStat('stat-cites', st.citations);
+
+      // GitHub stars
+      Object.entries(data.repos || {}).forEach(([name, info]) => {
+        const card = document.querySelector('.repo-card[data-repo="' + name + '"]');
+        if (!card || !(info.stars > 0)) return;
+        let el = card.querySelector('.repo-stars');
+        if (!el) {
+          el = document.createElement('span');
+          el.className = 'repo-stars';
+          card.querySelector('.repo-header').appendChild(el);
+        }
+        el.textContent = '⭐ ' + info.stars;
+      });
+
+      // Publications: refresh citation badges and add new papers
+      const known = new Map();
+      document.querySelectorAll('.pub-card').forEach(card => {
+        const t = card.querySelector('.pub-title');
+        if (t) known.set(norm(t.textContent), card);
+      });
+
+      (data.publications || []).forEach(p => {
+        const card = known.get(norm(p.title));
+        if (card) {
+          if (!(p.citations > 0)) return;
+          let badge = card.querySelector('.pub-badge');
+          if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'pub-badge';
+            card.querySelector('.pub-meta').appendChild(badge);
+          }
+          badge.textContent = cite(p.citations);
+        } else if (p.year >= MIN_YEAR) {
+          addPub(p);
+          known.set(norm(p.title), true);
+        }
+      });
+
+      function addPub(p) {
+        const list = document.querySelector('.pub-list');
+        let group = [...list.querySelectorAll('.pub-year-group')]
+          .find(g => g.querySelector('.pub-year').textContent.trim() === String(p.year));
+        if (!group) {
+          group = document.createElement('div');
+          group.className = 'pub-year-group reveal visible';
+          group.innerHTML = '<h3 class="pub-year">' + esc(p.year) + '</h3>';
+          const next = [...list.querySelectorAll('.pub-year-group')]
+            .find(g => +g.querySelector('.pub-year').textContent < p.year);
+          list.insertBefore(group, next || null);
+        }
+        const card = document.createElement('article');
+        card.className = 'pub-card';
+        card.innerHTML =
+          '<div class="pub-meta"><span class="pub-journal">' + esc(p.venue) + '</span>' +
+          (p.citations > 0 ? '<span class="pub-badge">' + cite(p.citations) + '</span>' : '') + '</div>' +
+          '<h4 class="pub-title">' + (p.doi
+              ? '<a href="' + esc(p.doi) + '" target="_blank" rel="noopener" style="color:inherit">' + esc(p.title) + '</a>'
+              : esc(p.title)) + '</h4>' +
+          '<p class="pub-authors">' + esc(p.authors) + '</p>';
+        group.querySelector('.pub-year').after(card);
+      }
+
+      if (data.updated) {
+        document.getElementById('last-updated').textContent =
+          ' · Stats updated ' + new Date(data.updated).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+      }
+    })();
   </script>
 
 </body>
