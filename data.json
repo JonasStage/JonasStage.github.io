@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-28T12:30:43+00:00",
-  "source": "OpenAlex (Scholar unavailable)",
-  "citation_source": "openalex",
+  "updated": "2026-09-28T13:04:25+00:00",
+  "source": "Google Scholar (citations) + OpenAlex (metadata)",
+  "citation_source": "scholar",
   "stats": {
-    "publications": 31,
+    "publications": 47,
     "repositories": 10,
-    "citations": 229
+    "citations": 281
   },
   "repos": {
     "Arres-1": {
@@ -61,7 +61,7 @@
       "year": 2026,
       "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)",
       "authors": "TI0 Kragh, K Sand-Jensen, JS Sø, E Polauke",
-      "citations": 0,
+      "citations": 1,
       "doi": null
     },
     {
@@ -69,7 +69,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (3)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 13,
+      "citations": 17,
       "doi": "https://doi.org/10.1007/s10533-025-01233-8"
     },
     {
@@ -77,7 +77,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (5)",
       "authors": "E Polauke, T Kragh, JS Sø, A Klamt, M Søndergaard, K Reitzel",
-      "citations": 5,
+      "citations": 6,
       "doi": "https://doi.org/10.1007/s10533-025-01276-x"
     },
     {
@@ -85,7 +85,7 @@
       "year": 2025,
       "venue": "Hydrobiologia 853 (2)",
       "authors": "K Sand‐Jensen, JS Sø, T Kragh",
-      "citations": 4,
+      "citations": 2,
       "doi": "https://doi.org/10.1007/s10750-025-05952-9"
     },
     {
@@ -93,7 +93,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (1)",
       "authors": "BW Olsen, T Kragh, JS Sø, E Polauke, K Sand‐Jensen",
-      "citations": 1,
+      "citations": 5,
       "doi": "https://doi.org/10.1007/s10533-024-01205-4"
     },
     {
@@ -125,7 +125,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 51,
+      "citations": 61,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
@@ -133,7 +133,7 @@
       "year": 2024,
       "venue": "Biogeochemistry 167 (2)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 25,
+      "citations": 32,
       "doi": "https://doi.org/10.1007/s10533-024-01124-4"
     },
     {
@@ -141,7 +141,7 @@
       "year": 2024,
       "venue": "Journal of Geophysical Research Biogeosciences 129 (6)",
       "authors": "JS Sø, K Sand‐Jensen, T Kragh",
-      "citations": 15,
+      "citations": 20,
       "doi": "https://doi.org/10.1029/2024jg008035"
     },
     {
@@ -149,7 +149,7 @@
       "year": 2024,
       "venue": "Journal of Environmental Management 356",
       "authors": "E Polauke, JS Sø, H Carl, PR Møller, K Reitzel, K Sand‐Jensen, T Kragh",
-      "citations": 11,
+      "citations": 12,
       "doi": "https://doi.org/10.1016/j.jenvman.2024.120570"
     },
     {
@@ -157,7 +157,7 @@
       "year": 2023,
       "venue": "The Science of The Total Environment 878",
       "authors": "JS Sø, K Sand‐Jensen, KT Martinsen, E Polauke, JE Kjær, K Reitzel, T Kragh",
-      "citations": 27,
+      "citations": 41,
       "doi": "https://doi.org/10.1016/j.scitotenv.2023.162895"
     },
     {
@@ -173,7 +173,7 @@
       "year": 2022,
       "venue": "Ecological Engineering 176",
       "authors": "JS Sø, T Kragh, K Sand‐Jensen, KT Martinsen",
-      "citations": 5,
+      "citations": 13,
       "doi": "https://doi.org/10.1016/j.ecoleng.2021.106516"
     },
     {
@@ -197,7 +197,7 @@
       "year": 2021,
       "venue": "Ecological Engineering 161",
       "authors": "JS Sø, K Sand‐Jensen, T Kragh",
-      "citations": 7,
+      "citations": 8,
       "doi": "https://doi.org/10.1016/j.ecoleng.2021.106160"
     },
     {
@@ -229,7 +229,7 @@
       "year": 2020,
       "venue": "The Science of The Total Environment 765",
       "authors": "K Sand‐Jensen, KT Martinsen, AL Jakobsen, JS Sø, M Madsen-Østerbye, JE Kjær, E Kristensen et al.",
-      "citations": 25,
+      "citations": 26,
       "doi": "https://doi.org/10.1016/j.scitotenv.2020.142792"
     },
     {
@@ -245,7 +245,7 @@
       "year": 2020,
       "venue": "4",
       "authors": "S Egemose, T Jensen, M Søndergaard, HS Jensen, K Reitzel, MJ Møller, E Kristensen et al.",
-      "citations": 0,
+      "citations": 1,
       "doi": null
     },
     {
@@ -277,7 +277,7 @@
       "year": 2019,
       "venue": "Freshwater Biology 65 (3)",
       "authors": "JS Sø, K Sand‐Jensen, L Baastrup‐Spohr",
-      "citations": 20,
+      "citations": 15,
       "doi": "https://doi.org/10.1111/fwb.13431"
     },
     {
