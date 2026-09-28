@@ -7,7 +7,7 @@ Runs inside the weekly GitHub Action, but can also be run locally:
 import datetime, json, os, re, sys, urllib.parse, urllib.request
 
 GITHUB_USER      = os.environ.get("GITHUB_USER", "JonasStage")
-SCHOLAR_ID       = os.environ.get("SCHOLAR_ID", "IP8yMtkAAAAJ")
+SCHOLAR_ID       = os.environ.get("SCHOLAR_ID", "-6tGaCoAAAAJ")
 OPENALEX_ID      = os.environ.get("OPENALEX_AUTHOR_ID", "").strip()   # e.g. A5012345678
 AUTHOR_NAME      = os.environ.get("AUTHOR_NAME", "Jonas Stage Sø")
 CONTACT_EMAIL    = os.environ.get("CONTACT_EMAIL", "Jonassoe@biology.sdu.dk")  # OpenAlex "polite pool"
@@ -105,6 +105,26 @@ def fetch_openalex():
 
 
 # ───────────── Google Scholar (source of truth for citations) ─────────────
+def find_total_citations(cited_by):
+    """Dig the all-time citation count out of SerpApi's cited_by block, whatever its exact shape."""
+    def walk(o):
+        if isinstance(o, dict):
+            c = o.get("citations")
+            if isinstance(c, dict) and isinstance(c.get("all"), int):
+                return c["all"]
+            for v in o.values():
+                r = walk(v)
+                if r is not None:
+                    return r
+        elif isinstance(o, list):
+            for v in o:
+                r = walk(v)
+                if r is not None:
+                    return r
+        return None
+    return walk(cited_by)
+
+
 def scholar_via_serpapi(key):
     """Reliable route: SerpApi's Google Scholar Author API (free tier: 100 searches/month)."""
     per_paper, total, start = {}, None, 0
@@ -115,14 +135,21 @@ def scholar_via_serpapi(key):
         if "error" in res:
             raise RuntimeError(res["error"])
         if total is None:
-            table = (res.get("cited_by") or {}).get("table") or []
-            total = next(row["citations"]["all"] for row in table if "citations" in row)
+            total = find_total_citations(res.get("cited_by"))
+            if total is None:
+                print("Could not find total citations in SerpApi response; cited_by block was:")
+                print(json.dumps(res.get("cited_by"), indent=1)[:1500])
         arts = res.get("articles", [])
         for a in arts:
             per_paper[norm(a["title"])] = (a.get("cited_by") or {}).get("value") or 0
         if len(arts) < 100:
             break
         start += 100
+    if not per_paper:
+        raise RuntimeError("SerpApi returned no articles for author id " + SCHOLAR_ID)
+    if total is None:
+        total = sum(per_paper.values())
+        print("WARNING: using the sum of per-paper citations as the total.")
     return {"citations": total, "publications": len(per_paper), "per_paper": per_paper}
 
 
