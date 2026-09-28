@@ -1,7 +1,291 @@
 {
-  "updated": null,
-  "source": "seed",
-  "stats": {},
-  "repos": {},
-  "publications": []
+  "updated": "2026-09-28T12:20:19+00:00",
+  "source": "OpenAlex",
+  "stats": {
+    "publications": 31,
+    "repositories": 10,
+    "citations": 229
+  },
+  "repos": {
+    "Arres-1": {
+      "stars": 0
+    },
+    "DKWaterChemistry": {
+      "stars": 0
+    },
+    "FluxSeparator": {
+      "stars": 6
+    },
+    "JonasStage": {
+      "stars": 0
+    },
+    "JonasStage.github.io": {
+      "stars": 0
+    },
+    "lake_chemistry": {
+      "stars": 0
+    },
+    "Methane-and-CO2-sensor": {
+      "stars": 3
+    },
+    "OnlineFluxSeparator": {
+      "stars": 0
+    },
+    "Pond_encroachment": {
+      "stars": 0
+    },
+    "seasonal_pond_ghg": {
+      "stars": 0
+    }
+  },
+  "publications": [
+    {
+      "title": "Phytoplankton Biomass and Growth Limitation During Fifty Years of Reduced Nutrient Loading in Shallow Lake Arresø",
+      "year": 2026,
+      "venue": "Freshwater Biology 71 (4)",
+      "authors": "K Sand‐Jensen, JS Sø, T Kragh",
+      "citations": 0,
+      "doi": "https://doi.org/10.1111/fwb.70213"
+    },
+    {
+      "title": "Highly Variable Methane Production and Fluxes in a Hypereutrophic Lake Despite Uniform Bathymetry and Sediment Chemistry",
+      "year": 2026,
+      "venue": "Journal of Geophysical Research Biogeosciences 131 (5)",
+      "authors": "E Polauke, JS Sø, K Sand‐Jensen, K Reitzel, T Kragh",
+      "citations": 0,
+      "doi": "https://doi.org/10.1029/2025jg009340"
+    },
+    {
+      "title": "Effekter af aborreudsætninger i nye søer",
+      "year": 2026,
+      "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)",
+      "authors": "TI0 Kragh, K Sand-Jensen, JS Sø, E Polauke",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Ebullition dominates high methane emissions globally across all lake sizes",
+      "year": 2025,
+      "venue": "Biogeochemistry 168 (3)",
+      "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
+      "citations": 13,
+      "doi": "https://doi.org/10.1007/s10533-025-01233-8"
+    },
+    {
+      "title": "The mobility and release dynamics of sediment phosphorus in a shallow hypereutrophic lake",
+      "year": 2025,
+      "venue": "Biogeochemistry 168 (5)",
+      "authors": "E Polauke, T Kragh, JS Sø, A Klamt, M Søndergaard, K Reitzel",
+      "citations": 5,
+      "doi": "https://doi.org/10.1007/s10533-025-01276-x"
+    },
+    {
+      "title": "Nutrient dynamics following 50 years of reduced loading in the large and shallow Lake Arresø",
+      "year": 2025,
+      "venue": "Hydrobiologia 853 (2)",
+      "authors": "K Sand‐Jensen, JS Sø, T Kragh",
+      "citations": 4,
+      "doi": "https://doi.org/10.1007/s10750-025-05952-9"
+    },
+    {
+      "title": "Environmental drivers of seasonal and hourly fluxes of methane and carbon dioxide across a lowland stream network with mixed catchment",
+      "year": 2025,
+      "venue": "Biogeochemistry 168 (1)",
+      "authors": "BW Olsen, T Kragh, JS Sø, E Polauke, K Sand‐Jensen",
+      "citations": 1,
+      "doi": "https://doi.org/10.1007/s10533-024-01205-4"
+    },
+    {
+      "title": "Successful stocking of wild European perch in a reestablished lake with lasting effect over 10 years",
+      "year": 2025,
+      "venue": "Restoration Ecology 34 (1)",
+      "authors": "T Kragh, JS Sø, K Sand‐Jensen, E Polauke",
+      "citations": 1,
+      "doi": "https://doi.org/10.1111/rec.70200"
+    },
+    {
+      "title": "Kulstofomsætning og CO2 på land og i vand",
+      "year": 2025,
+      "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)",
+      "authors": "K Sand-Jensen, JS Sø, T Kragh",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Vandløb og søer er ikke slyngler i klimabudgettet",
+      "year": 2025,
+      "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)",
+      "authors": "K Sand-Jensen, JS Sø, T Kragh",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Global Lake Health in the Anthropocene: Societal Implications and Treatment Strategies",
+      "year": 2024,
+      "venue": "Earth s Future 12 (4)",
+      "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
+      "citations": 51,
+      "doi": "https://doi.org/10.1029/2023ef004387"
+    },
+    {
+      "title": "Hourly methane and carbon dioxide fluxes from temperate ponds",
+      "year": 2024,
+      "venue": "Biogeochemistry 167 (2)",
+      "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
+      "citations": 25,
+      "doi": "https://doi.org/10.1007/s10533-024-01124-4"
+    },
+    {
+      "title": "Self‐Made Equipment for Automatic Methane Diffusion and Ebullition Measurements From Aquatic Environments",
+      "year": 2024,
+      "venue": "Journal of Geophysical Research Biogeosciences 129 (6)",
+      "authors": "JS Sø, K Sand‐Jensen, T Kragh",
+      "citations": 15,
+      "doi": "https://doi.org/10.1029/2024jg008035"
+    },
+    {
+      "title": "Water quality in a shallow eutrophic lake is unaffected by extensive thinning of planktivorous and benthivorous fish species",
+      "year": 2024,
+      "venue": "Journal of Environmental Management 356",
+      "authors": "E Polauke, JS Sø, H Carl, PR Møller, K Reitzel, K Sand‐Jensen, T Kragh",
+      "citations": 11,
+      "doi": "https://doi.org/10.1016/j.jenvman.2024.120570"
+    },
+    {
+      "title": "Methane and carbon dioxide fluxes at high spatiotemporal resolution from a small temperate lake",
+      "year": 2023,
+      "venue": "The Science of The Total Environment 878",
+      "authors": "JS Sø, K Sand‐Jensen, KT Martinsen, E Polauke, JE Kjær, K Reitzel, T Kragh",
+      "citations": 27,
+      "doi": "https://doi.org/10.1016/j.scitotenv.2023.162895"
+    },
+    {
+      "title": "Methane and carbon dioxide fluxes from temperate ponds at a high spatiotemporal resolution",
+      "year": 2023,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
+      "citations": 0,
+      "doi": "https://doi.org/10.5281/zenodo.7575885"
+    },
+    {
+      "title": "Environmental drivers and sources of stream oxygen consumption in an agricultural lake catchment",
+      "year": 2022,
+      "venue": "Ecological Engineering 176",
+      "authors": "JS Sø, T Kragh, K Sand‐Jensen, KT Martinsen",
+      "citations": 5,
+      "doi": "https://doi.org/10.1016/j.ecoleng.2021.106516"
+    },
+    {
+      "title": "Vandløbenes CO2-overmætning og biodiversitet",
+      "year": 2022,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "K Sand‐Jensen, KT Martinsen, JE Kjær, JS Sø, M Baumane, T Kragh, B Lars et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Wind drives fast changes of light climate in a large, shallow re-established lake",
+      "year": 2021,
+      "venue": "The Science of The Total Environment 806 (Pt 3)",
+      "authors": "KT Martinsen, T Kragh, K Sand‐Jensen, M Madsen-Østerbye, E Kristensen, JS Sø",
+      "citations": 19,
+      "doi": "https://doi.org/10.1016/j.scitotenv.2021.151354"
+    },
+    {
+      "title": "Optimal physical design in a new lake for reducing phosphorus pools",
+      "year": 2021,
+      "venue": "Ecological Engineering 161",
+      "authors": "JS Sø, K Sand‐Jensen, T Kragh",
+      "citations": 7,
+      "doi": "https://doi.org/10.1016/j.ecoleng.2021.106160"
+    },
+    {
+      "title": "Bæredygtig Søforvaltning: et paradigmeskifte i restaureringen af søer",
+      "year": 2021,
+      "venue": "VBN Forskningsportal (Aalborg Universitet) 28 (2)",
+      "authors": "K Reitzel, M Søndergaard, SB Olsen, TA Davidson, S Egemose, S Haasler, A Klamt et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Kalken i naturens processer",
+      "year": 2021,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "K Sand‐Jensen, JS Sø, E Kristensen, T Kragh",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Klimagasser:fra landjorden, over vandløb og søer til kystvande",
+      "year": 2021,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "K Sand‐Jensen, JE Kjær, KT Martinsen, JS Sø, T Kragh",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Large pools and fluxes of carbon, calcium and phosphorus in dense charophyte stands in ponds",
+      "year": 2020,
+      "venue": "The Science of The Total Environment 765",
+      "authors": "K Sand‐Jensen, KT Martinsen, AL Jakobsen, JS Sø, M Madsen-Østerbye, JE Kjær, E Kristensen et al.",
+      "citations": 25,
+      "doi": "https://doi.org/10.1016/j.scitotenv.2020.142792"
+    },
+    {
+      "title": "Fødekæder i nye søer",
+      "year": 2020,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen) 4",
+      "authors": "E Jeppesen, E Kristensen, T Shurkhuu, TL Lauridsen, JS Sø, J Borum, S Egemose et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Nye søer og deres vandkvalitet",
+      "year": 2020,
+      "venue": "4",
+      "authors": "S Egemose, T Jensen, M Søndergaard, HS Jensen, K Reitzel, MJ Møller, E Kristensen et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Fysisk design af nye søer kan reducere fosforpuljen og tilgodese biodiversiteten",
+      "year": 2020,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "JS Sø, T Kragh, K Sand‐Jensen",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Vandplanternes artsrigdom og udbredelse i nye søer",
+      "year": 2020,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "L Baastrup‐Spohr, JS Sø, KT Martinsen, NB Zak, E Kristensen, T Kragh, M Søndergaard et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Vandplanters artsrigdom og udbredelse i nye søer",
+      "year": 2020,
+      "venue": "",
+      "authors": "L Baastrup‐Spohr, JS Sø, KT Martinsen, NB Zak, E Kristensen, T Kragh, M Søndergaard et al.",
+      "citations": 0,
+      "doi": null
+    },
+    {
+      "title": "Temporal development of biodiversity of macrophytes in newly established lakes",
+      "year": 2019,
+      "venue": "Freshwater Biology 65 (3)",
+      "authors": "JS Sø, K Sand‐Jensen, L Baastrup‐Spohr",
+      "citations": 20,
+      "doi": "https://doi.org/10.1111/fwb.13431"
+    },
+    {
+      "title": "Karaktertræk hos planter i nye danske søer:Kort review",
+      "year": 2018,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "authors": "K Sand‐Jensen, RN Mikkeline, JS Sø, B Lars",
+      "citations": 0,
+      "doi": null
+    }
+  ]
 }
