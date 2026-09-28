@@ -7,7 +7,7 @@ Runs inside the weekly GitHub Action, but can also be run locally:
 import datetime, json, os, re, sys, urllib.parse, urllib.request
 
 GITHUB_USER      = os.environ.get("GITHUB_USER", "JonasStage")
-SCHOLAR_ID       = os.environ.get("SCHOLAR_ID", "-6tGaCoAAAAJ")
+SCHOLAR_ID       = os.environ.get("SCHOLAR_ID", "IP8yMtkAAAAJ")
 OPENALEX_ID      = os.environ.get("OPENALEX_AUTHOR_ID", "").strip()   # e.g. A5012345678
 AUTHOR_NAME      = os.environ.get("AUTHOR_NAME", "Jonas Stage Sø")
 CONTACT_EMAIL    = os.environ.get("CONTACT_EMAIL", "Jonassoe@biology.sdu.dk")  # OpenAlex "polite pool"
