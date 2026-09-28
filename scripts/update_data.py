@@ -8,7 +8,7 @@ import datetime, json, os, re, sys, urllib.parse, urllib.request
 
 GITHUB_USER      = os.environ.get("GITHUB_USER", "JonasStage")
 SCHOLAR_ID       = os.environ.get("SCHOLAR_ID", "-6tGaCoAAAAJ")
-OPENALEX_ID      = os.environ.get("OPENALEX_AUTHOR_ID", "A5041854845").strip()   # e.g. A5012345678
+OPENALEX_ID      = os.environ.get("OPENALEX_AUTHOR_ID", "").strip()   # e.g. A5012345678
 AUTHOR_NAME      = os.environ.get("AUTHOR_NAME", "Jonas Stage Sø")
 CONTACT_EMAIL    = os.environ.get("CONTACT_EMAIL", "Jonassoe@biology.sdu.dk")  # OpenAlex "polite pool"
 OUT              = os.path.join(os.path.dirname(__file__), "..", "data.json")
@@ -104,49 +104,101 @@ def fetch_openalex():
     return pubs
 
 
-# ───────────── Google Scholar (best effort – Google often blocks cloud IPs) ─────────────
+# ───────────── Google Scholar (source of truth for citations) ─────────────
+def scholar_via_serpapi(key):
+    """Reliable route: SerpApi's Google Scholar Author API (free tier: 100 searches/month)."""
+    per_paper, total, start = {}, None, 0
+    while True:
+        url = ("https://serpapi.com/search.json?engine=google_scholar_author"
+               f"&author_id={SCHOLAR_ID}&hl=en&num=100&start={start}&api_key={key}")
+        res = get_json(url)
+        if "error" in res:
+            raise RuntimeError(res["error"])
+        if total is None:
+            table = (res.get("cited_by") or {}).get("table") or []
+            total = next(row["citations"]["all"] for row in table if "citations" in row)
+        arts = res.get("articles", [])
+        for a in arts:
+            per_paper[norm(a["title"])] = (a.get("cited_by") or {}).get("value") or 0
+        if len(arts) < 100:
+            break
+        start += 100
+    return {"citations": total, "publications": len(per_paper), "per_paper": per_paper}
+
+
+def scholar_via_scholarly():
+    """Free route: scrapes Scholar directly. Google often blocks GitHub's IP ranges."""
+    from scholarly import scholarly
+    a = scholarly.fill(scholarly.search_author_id(SCHOLAR_ID), sections=["indices", "publications"])
+    return {
+        "citations": a["citedby"],
+        "publications": len(a["publications"]),
+        "per_paper": {norm(p["bib"]["title"]): p.get("num_citations", 0) for p in a["publications"]},
+    }
+
+
 def fetch_scholar():
+    attempts = []
+    if os.environ.get("SERPAPI_KEY"):
+        attempts.append(("SerpApi", lambda: scholar_via_serpapi(os.environ["SERPAPI_KEY"])))
+    attempts.append(("scholarly", scholar_via_scholarly))
+    for name, fn in attempts:
+        try:
+            result = fn()
+            if result["citations"] is not None:
+                print(f"Google Scholar OK via {name}")
+                return result
+        except Exception as e:
+            print(f"Google Scholar via {name} failed: {repr(e)[:200]}")
+    return None
+
+
+def load_old():
     try:
-        from scholarly import scholarly
-        a = scholarly.fill(scholarly.search_author_id(SCHOLAR_ID), sections=["indices", "publications"])
-        return {
-            "citations": a["citedby"],
-            "publications": len(a["publications"]),
-            "per_paper": {norm(p["bib"]["title"]): p.get("num_citations", 0) for p in a["publications"]},
-        }
-    except Exception as e:
-        print("Google Scholar unavailable, falling back to OpenAlex:", repr(e)[:200])
-        return None
+        return json.load(open(OUT, encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        return {}
 
 
 def main():
     gh = fetch_github()
     pubs = fetch_openalex()
     sc = fetch_scholar()
+    old = load_old()
 
     if sc:
+        # Scholar numbers win everywhere; OpenAlex only supplies the metadata.
         for p in pubs:
-            p["citations"] = max(p["citations"], sc["per_paper"].get(norm(p["title"]), 0))
-        citations, n_pubs, source = sc["citations"], max(sc["publications"], len(pubs)), "Google Scholar + OpenAlex"
+            p["citations"] = sc["per_paper"].get(norm(p["title"]), 0)
+        citations, n_pubs = sc["citations"], max(sc["publications"], len(pubs))
+        source = "Google Scholar (citations) + OpenAlex (metadata)"
+    elif old.get("citation_source") == "scholar":
+        # Scholar blocked us: keep the last known Scholar numbers rather than
+        # replacing them with (lower) OpenAlex ones.
+        print("WARNING: Scholar unreachable - keeping previous Scholar citation numbers.")
+        prev = {norm(x["title"]): x["citations"] for x in old.get("publications", [])}
+        for p in pubs:
+            p["citations"] = prev.get(norm(p["title"]), 0)
+        citations = old["stats"]["citations"]
+        n_pubs = max(old["stats"].get("publications", 0), len(pubs))
+        source = old.get("source", "Google Scholar (cached)")
     else:
-        citations, n_pubs, source = sum(p["citations"] for p in pubs), len(pubs), "OpenAlex"
+        print("WARNING: Scholar unreachable and no cached Scholar data - using OpenAlex numbers.")
+        citations, n_pubs, source = sum(p["citations"] for p in pubs), len(pubs), "OpenAlex (Scholar unavailable)"
 
     data = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
         "source": source,
+        "citation_source": "scholar" if (sc or old.get("citation_source") == "scholar") else "openalex",
         "stats": {"publications": n_pubs, "repositories": gh["count"], "citations": citations},
         "repos": gh["repos"],
         "publications": pubs,
     }
 
     # Only touch the file when something actually changed (avoids empty weekly commits)
-    try:
-        old = json.load(open(OUT, encoding="utf-8"))
-        if {k: v for k, v in old.items() if k != "updated"} == {k: v for k, v in data.items() if k != "updated"}:
-            print("No changes.")
-            return
-    except FileNotFoundError:
-        pass
+    if old and {k: v for k, v in old.items() if k != "updated"} == {k: v for k, v in data.items() if k != "updated"}:
+        print("No changes.")
+        return
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Updated: {n_pubs} publications, {gh['count']} repos, {citations} citations ({source})")
