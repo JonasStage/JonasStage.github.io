@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-28T13:04:25+00:00",
+  "updated": "2026-10-05T12:08:54+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
-    "repositories": 10,
-    "citations": 281
+    "repositories": 11,
+    "citations": 285
   },
   "repos": {
     "Arres-1": {
@@ -16,6 +16,9 @@
     },
     "FluxSeparator": {
       "stars": 6
+    },
+    "GLEON-Seminal-papers": {
+      "stars": 0
     },
     "JonasStage": {
       "stars": 0
@@ -77,7 +80,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (5)",
       "authors": "E Polauke, T Kragh, JS Sø, A Klamt, M Søndergaard, K Reitzel",
-      "citations": 6,
+      "citations": 7,
       "doi": "https://doi.org/10.1007/s10533-025-01276-x"
     },
     {
@@ -133,7 +136,7 @@
       "year": 2024,
       "venue": "Biogeochemistry 167 (2)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 32,
+      "citations": 33,
       "doi": "https://doi.org/10.1007/s10533-024-01124-4"
     },
     {
@@ -141,7 +144,7 @@
       "year": 2024,
       "venue": "Journal of Geophysical Research Biogeosciences 129 (6)",
       "authors": "JS Sø, K Sand‐Jensen, T Kragh",
-      "citations": 20,
+      "citations": 21,
       "doi": "https://doi.org/10.1029/2024jg008035"
     },
     {
@@ -277,7 +280,7 @@
       "year": 2019,
       "venue": "Freshwater Biology 65 (3)",
       "authors": "JS Sø, K Sand‐Jensen, L Baastrup‐Spohr",
-      "citations": 15,
+      "citations": 16,
       "doi": "https://doi.org/10.1111/fwb.13431"
     },
     {
