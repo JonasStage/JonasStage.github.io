@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-05T12:08:54+00:00",
+  "updated": "2026-10-12T12:56:18+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 285
+    "citations": 289
   },
   "repos": {
     "Arres-1": {
@@ -63,7 +63,7 @@
       "title": "Effekter af aborreudsætninger i nye søer",
       "year": 2026,
       "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)",
-      "authors": "TI0 Kragh, K Sand-Jensen, JS Sø, E Polauke",
+      "authors": "T Kragh, K Sand-Jensen, JS Sø, E Polauke",
       "citations": 1,
       "doi": null
     },
@@ -128,7 +128,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 61,
+      "citations": 62,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
@@ -144,7 +144,7 @@
       "year": 2024,
       "venue": "Journal of Geophysical Research Biogeosciences 129 (6)",
       "authors": "JS Sø, K Sand‐Jensen, T Kragh",
-      "citations": 21,
+      "citations": 22,
       "doi": "https://doi.org/10.1029/2024jg008035"
     },
     {
@@ -160,16 +160,8 @@
       "year": 2023,
       "venue": "The Science of The Total Environment 878",
       "authors": "JS Sø, K Sand‐Jensen, KT Martinsen, E Polauke, JE Kjær, K Reitzel, T Kragh",
-      "citations": 41,
+      "citations": 43,
       "doi": "https://doi.org/10.1016/j.scitotenv.2023.162895"
-    },
-    {
-      "title": "Methane and carbon dioxide fluxes from temperate ponds at a high spatiotemporal resolution",
-      "year": 2023,
-      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-      "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 0,
-      "doi": "https://doi.org/10.5281/zenodo.7575885"
     },
     {
       "title": "Environmental drivers and sources of stream oxygen consumption in an agricultural lake catchment",
@@ -239,7 +231,7 @@
       "title": "Fødekæder i nye søer",
       "year": 2020,
       "venue": "Research at the University of Copenhagen (University of Copenhagen) 4",
-      "authors": "E Jeppesen, E Kristensen, T Shurkhuu, TL Lauridsen, JS Sø, J Borum, S Egemose et al.",
+      "authors": "E Jeppesen, E Kristensen, S Tserenpil, TL Lauridsen, JS Sø, J Borum, S Egemose et al.",
       "citations": 0,
       "doi": null
     },
