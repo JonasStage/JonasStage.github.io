@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-12T12:56:18+00:00",
+  "updated": "2026-10-19T10:36:56+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 289
+    "citations": 293
   },
   "repos": {
     "Arres-1": {
@@ -128,7 +128,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 62,
+      "citations": 63,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
@@ -136,7 +136,7 @@
       "year": 2024,
       "venue": "Biogeochemistry 167 (2)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 33,
+      "citations": 34,
       "doi": "https://doi.org/10.1007/s10533-024-01124-4"
     },
     {
@@ -224,16 +224,8 @@
       "year": 2020,
       "venue": "The Science of The Total Environment 765",
       "authors": "K Sand‐Jensen, KT Martinsen, AL Jakobsen, JS Sø, M Madsen-Østerbye, JE Kjær, E Kristensen et al.",
-      "citations": 26,
+      "citations": 27,
       "doi": "https://doi.org/10.1016/j.scitotenv.2020.142792"
-    },
-    {
-      "title": "Fødekæder i nye søer",
-      "year": 2020,
-      "venue": "Research at the University of Copenhagen (University of Copenhagen) 4",
-      "authors": "E Jeppesen, E Kristensen, S Tserenpil, TL Lauridsen, JS Sø, J Borum, S Egemose et al.",
-      "citations": 0,
-      "doi": null
     },
     {
       "title": "Nye søer og deres vandkvalitet",
@@ -241,6 +233,14 @@
       "venue": "4",
       "authors": "S Egemose, T Jensen, M Søndergaard, HS Jensen, K Reitzel, MJ Møller, E Kristensen et al.",
       "citations": 1,
+      "doi": null
+    },
+    {
+      "title": "Fødekæder i nye søer",
+      "year": 2020,
+      "venue": "Research at the University of Copenhagen (University of Copenhagen) 4",
+      "authors": "E Jeppesen, E Kristensen, S Tserenpil, TL Lauridsen, JS Sø, J Borum, S Egemose et al.",
+      "citations": 0,
       "doi": null
     },
     {
