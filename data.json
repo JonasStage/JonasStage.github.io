@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-19T10:36:56+00:00",
+  "updated": "2026-10-26T10:52:22+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 293
+    "citations": 301
   },
   "repos": {
     "Arres-1": {
@@ -80,7 +80,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (5)",
       "authors": "E Polauke, T Kragh, JS Sø, A Klamt, M Søndergaard, K Reitzel",
-      "citations": 7,
+      "citations": 8,
       "doi": "https://doi.org/10.1007/s10533-025-01276-x"
     },
     {
@@ -88,7 +88,7 @@
       "year": 2025,
       "venue": "Hydrobiologia 853 (2)",
       "authors": "K Sand‐Jensen, JS Sø, T Kragh",
-      "citations": 2,
+      "citations": 3,
       "doi": "https://doi.org/10.1007/s10750-025-05952-9"
     },
     {
@@ -128,7 +128,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 63,
+      "citations": 65,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
@@ -136,7 +136,7 @@
       "year": 2024,
       "venue": "Biogeochemistry 167 (2)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 34,
+      "citations": 35,
       "doi": "https://doi.org/10.1007/s10533-024-01124-4"
     },
     {
@@ -152,7 +152,7 @@
       "year": 2024,
       "venue": "Journal of Environmental Management 356",
       "authors": "E Polauke, JS Sø, H Carl, PR Møller, K Reitzel, K Sand‐Jensen, T Kragh",
-      "citations": 12,
+      "citations": 13,
       "doi": "https://doi.org/10.1016/j.jenvman.2024.120570"
     },
     {
@@ -160,7 +160,7 @@
       "year": 2023,
       "venue": "The Science of The Total Environment 878",
       "authors": "JS Sø, K Sand‐Jensen, KT Martinsen, E Polauke, JE Kjær, K Reitzel, T Kragh",
-      "citations": 43,
+      "citations": 44,
       "doi": "https://doi.org/10.1016/j.scitotenv.2023.162895"
     },
     {
