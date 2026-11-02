@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-26T10:52:22+00:00",
+  "updated": "2026-11-02T13:15:56+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 301
+    "citations": 308
   },
   "repos": {
     "Arres-1": {
@@ -72,7 +72,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (3)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 17,
+      "citations": 18,
       "doi": "https://doi.org/10.1007/s10533-025-01233-8"
     },
     {
@@ -96,7 +96,7 @@
       "year": 2025,
       "venue": "Biogeochemistry 168 (1)",
       "authors": "BW Olsen, T Kragh, JS Sø, E Polauke, K Sand‐Jensen",
-      "citations": 5,
+      "citations": 6,
       "doi": "https://doi.org/10.1007/s10533-024-01205-4"
     },
     {
@@ -128,7 +128,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 65,
+      "citations": 67,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
@@ -136,7 +136,7 @@
       "year": 2024,
       "venue": "Biogeochemistry 167 (2)",
       "authors": "JS Sø, KT Martinsen, T Kragh, K Sand‐Jensen",
-      "citations": 35,
+      "citations": 36,
       "doi": "https://doi.org/10.1007/s10533-024-01124-4"
     },
     {
@@ -144,7 +144,7 @@
       "year": 2024,
       "venue": "Journal of Geophysical Research Biogeosciences 129 (6)",
       "authors": "JS Sø, K Sand‐Jensen, T Kragh",
-      "citations": 22,
+      "citations": 24,
       "doi": "https://doi.org/10.1029/2024jg008035"
     },
     {
