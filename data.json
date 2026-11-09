@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-02T13:15:56+00:00",
+  "updated": "2026-11-09T13:42:32+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 308
+    "citations": 309
   },
   "repos": {
     "Arres-1": {
