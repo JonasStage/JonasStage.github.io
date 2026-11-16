@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-09T13:42:32+00:00",
+  "updated": "2026-11-16T13:26:56+00:00",
   "source": "Google Scholar (citations) + OpenAlex (metadata)",
   "citation_source": "scholar",
   "stats": {
     "publications": 47,
     "repositories": 11,
-    "citations": 309
+    "citations": 311
   },
   "repos": {
     "Arres-1": {
@@ -84,20 +84,20 @@
       "doi": "https://doi.org/10.1007/s10533-025-01276-x"
     },
     {
-      "title": "Nutrient dynamics following 50 years of reduced loading in the large and shallow Lake Arresø",
-      "year": 2025,
-      "venue": "Hydrobiologia 853 (2)",
-      "authors": "K Sand‐Jensen, JS Sø, T Kragh",
-      "citations": 3,
-      "doi": "https://doi.org/10.1007/s10750-025-05952-9"
-    },
-    {
       "title": "Environmental drivers of seasonal and hourly fluxes of methane and carbon dioxide across a lowland stream network with mixed catchment",
       "year": 2025,
       "venue": "Biogeochemistry 168 (1)",
       "authors": "BW Olsen, T Kragh, JS Sø, E Polauke, K Sand‐Jensen",
       "citations": 6,
       "doi": "https://doi.org/10.1007/s10533-024-01205-4"
+    },
+    {
+      "title": "Nutrient dynamics following 50 years of reduced loading in the large and shallow Lake Arresø",
+      "year": 2025,
+      "venue": "Hydrobiologia 853 (2)",
+      "authors": "K Sand‐Jensen, JS Sø, T Kragh",
+      "citations": 3,
+      "doi": "https://doi.org/10.1007/s10750-025-05952-9"
     },
     {
       "title": "Successful stocking of wild European perch in a reestablished lake with lasting effect over 10 years",
@@ -128,7 +128,7 @@
       "year": 2024,
       "venue": "Earth s Future 12 (4)",
       "authors": "GA Weyhenmeyer, AV Chukwuka, O Anneville, JD Brookes, CR Carvalho, JB Cotner, H Grossart et al.",
-      "citations": 67,
+      "citations": 69,
       "doi": "https://doi.org/10.1029/2023ef004387"
     },
     {
